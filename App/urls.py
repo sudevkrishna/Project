@@ -1,5 +1,6 @@
-from django.urls import path,include
-from . views import views
+from django.urls import path
+from . import views
+
 urlpatterns = [
     path('test',views.test,name='test')
 ]
