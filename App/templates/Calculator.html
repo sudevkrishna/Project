@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        input  
+        {  
+            width: 20px;  
+            background-color:black;  
+            color: white;  
+            border: 3px solid gray;  
+            border-radius: 5px;  
+            padding: 26px;  
+            margin: 5px;  
+            font-size: 15px;  
+        }  
+        .formstyle  
+        {  
+            width: 300px;  
+            height: 640px;  
+            margin: auto;  
+            border: 3px solid skyblue;  
+            border-radius: 5px;  
+            padding: 20px;  
+        }  
+    </style>
+</head>
+<body>
+    <div class="formstyle">
+        <form action="">
+            <h1 align="center">CALCULATOR</h1>
+            <input type="textbox" class="in" id="display" readonly style="padding: 10px;width: 250px;"><br><br>
+            <input type="button" class="in" value="1" id="" onclick="Calculator(1)">
+            <input type="button" class="in" value="2" id="" onclick="Calculator(2)">
+            <input type="button" class="in" value="3" id="" onclick="Calculator(3)">
+            <input type="button" class="in" value="+" id="" onclick="operation('+')">
+            <br> <br>
+    
+            <input type="button" class="in" value="4" id="" onclick="Calculator(4)">
+            <input type="button" class="in" value="5" id="" onclick="Calculator(5)">
+            <input type="button" class="in" value="6" id="" onclick="Calculator(6)">
+            <input type="button" class="in" value="-" id="" onclick="operation('-')">
+            <br> <br>
+    
+            <input type="button" class="in" value="7" id="" onclick="Calculator(7)">
+            <input type="button" class="in" value="8" id="" onclick="Calculator(8)">
+            <input type="button" class="in" value="9" id="" onclick="Calculator(9)">
+            <input type="button" class="in" value="*" id="" onclick="operation('*')">
+            <br> <br>
+    
+            <input type="button" class="in" value="/" id="" onclick="operation('/')">
+            <input type="button" class="in" value="0" id="" onclick="Calculator(0)">
+            <input type="button" class="in" value="." id="" onclick="dot('.')">
+            <input type="button" class="in" value="C" id="" onclick="document.getElementById('display').value='' ">
+            <br> <br>
+    
+            <input type="button" class="in" value="=" id="" onclick="answer()">
+        </form>
+    </div>
+    <script>
+        
+        
+        function Calculator(num)
+        {
+            document.getElementById('display').value+=num;
+        }
+        function operation(op)
+        {
+            operator=op;
+            num1=Number(document.getElementById('display').value);
+            document.getElementById('display').value=" ";
+        }
+        function answer()
+        {
+            num2=Number(document.getElementById('display').value);
+            if(operator=="+")
+            {
+                result=num1+num2;
+            }
+            else if(operator=="-")
+            {
+                result=num1-num2;
+            }
+            else if(operator=="*")
+            {
+                result=num1*num2;
+            }
+            else if(operator=="/")
+            {
+                result=num1/num2;
+            }
+            document.getElementById('display').value=result;
+            
+        }
+        function dot(x)
+        {
+            var d = document.getElementById('display').value;
+            count = 0;
+            for(i=0;i<d.length;i++)
+            {
+                if(d[i]=='.')
+            {
+                count++;
+            }
+            }
+            if(count==0)
+            {
+                document.getElementById('display').value+=x;
+
+            }
+            else{
+                document.getElementById('display').value;
+            }
+        }
+    </script>
+</body>
+</html>
