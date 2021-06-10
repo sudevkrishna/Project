@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form action="">
+        <label for="">Enter name:</label>
+    <input type="text" placeholder="enter name"><br>
+    <label for="">Number:</label>
+    <input type="text" placeholder="phone number"><br>
+    
+  <!--<label for="">ID:</label>
+      <input type="checkbox" id="check">Do you have Aadhar number? <br>
+    <input type="text" id="sh" placeholder="enter aadhar number" style="display: none;"><br> -->  
+    <label for="">Select your ID:</label>
+    <select name="" id="sel">
+        <option value="select">Select ID</option>
+        <option value="Aadhar" id="aa">Aadhar</option>
+        <option value="Passport" id="bb">Passport</option>
+        <option value="Driving License" id="cc">Driving License</option>
+        <option value="Voter ID" id="dd">Voter ID</option>
+    </select><br>
+    <input type="text" id="inp" placeholder="Select your ID" style="display: none;">
+   <!-- <input type="text" id="a" placeholder="Enter aadhar number" style="display: none;">
+    <input type="text" id="b" placeholder="Enter Passport number" style="display: none;">
+    <input type="text" id="c" placeholder="Enter Driving License number" style="display: none;">
+    <input type="text" id="d" placeholder="Enter Voter ID number" style="display: none;">--> 
+    </form>
+    <script>
+        $('#sel').on("change",function(){
+            if(this.value==null)
+            {
+                $('#inp').val("please select your ID");
+            }
+            else
+            {
+                $('#inp').show();
+                $('#inp').attr('placeholder','Enter '+this.value+' number');
+            }
+            
+
+        })
+    </script>
+</body>
+</html>

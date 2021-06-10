@@ -3,7 +3,7 @@ from django.shortcuts import render
 def test(request):
     return render(request,'samplewebpage.html')
 def test1(request):
-    return render(request,'gridex.html')
+    return render(request,'selectjq.html')
 def calc(request):
     return render(request,'Calculator.html')
 def final(request):
