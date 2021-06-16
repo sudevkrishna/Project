@@ -12,3 +12,5 @@ def finaladmin(request):
     return render(request,'adminside.html')
 def finaluser(request):
     return render(request,'userside.html')
+def sliding(request):
+    return render(request,'slider.html')

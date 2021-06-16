@@ -7,5 +7,6 @@ urlpatterns = [
     path('calc',views.calc,name='calc'),
     path('final',views.final,name='final'),
     path('adminside',views.finaladmin,name='adminside'),
-    path('userside',views.finaluser,name='userside')
+    path('userside',views.finaluser,name='userside'),
+    path('slide',views.sliding,name='slide')
 ]
